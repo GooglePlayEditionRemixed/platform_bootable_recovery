@@ -128,6 +128,11 @@ LOCAL_STATIC_LIBRARIES := \
     libc
 include $(BUILD_EXECUTABLE)
 
+for Exynos5 Platform semi-hack
+ifeq ($(TARGET_BOARD_PLATFORM),exynos5)
+    $(LOCAL_PATH)/libdmverity/Android.mk \
+    $(LOCAL_PATH)/libdmverity_hashgen/Android.mk
+endif
 
 include $(LOCAL_PATH)/minui/Android.mk \
     $(LOCAL_PATH)/minzip/Android.mk \
