@@ -51,6 +51,12 @@ ifeq ($(HOST_OS),linux)
 LOCAL_REQUIRED_MODULES := mkfs.f2fs
 endif
 
+# for Exynos5 Platform semi-hack
+ifeq ($(TARGET_BOARD_PLATFORM),exynos5)
+   $(LOCAL_PATH)/libdmverity/Android.mk \
+   $(LOCAL_PATH)/libdmverity_hashgen/Android.mk
+endif
+
 RECOVERY_API_VERSION := 3
 RECOVERY_FSTAB_VERSION := 2
 LOCAL_CFLAGS += -DRECOVERY_API_VERSION=$(RECOVERY_API_VERSION)
@@ -127,9 +133,6 @@ LOCAL_STATIC_LIBRARIES := \
     libstdc++ \
     libc
 include $(BUILD_EXECUTABLE)
-
-    $(LOCAL_PATH)/libdmverity/Android.mk \
-    $(LOCAL_PATH)/libdmverity_hashgen/Android.mk
 
 include $(LOCAL_PATH)/minui/Android.mk \
     $(LOCAL_PATH)/minzip/Android.mk \
