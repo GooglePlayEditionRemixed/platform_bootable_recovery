@@ -53,7 +53,7 @@ endif
 
 # for Exynos5 Platform semi-hack
 ifeq ($(TARGET_BOARD_PLATFORM),exynos5)
-    $(LOCAL_PATH)/libdmverity/Android.mk \
+include $(LOCAL_PATH)/libdmverity/Android.mk \
     $(LOCAL_PATH)/libdmverity_hashgen/Android.mk
 endif
 
