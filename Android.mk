@@ -52,10 +52,10 @@ LOCAL_REQUIRED_MODULES := mkfs.f2fs
 endif
 
 # for Exynos5 Platform semi-hack
-ifeq ($(TARGET_BOARD_PLATFORM),exynos5)
-include $(LOCAL_PATH)/libdmverity/Android.mk \
-    $(LOCAL_PATH)/libdmverity_hashgen/Android.mk
-endif
+##ifeq ($(TARGET_BOARD_PLATFORM),exynos5)
+#include $(LOCAL_PATH)/libdmverity/Android.mk \
+#    $(LOCAL_PATH)/libdmverity_hashgen/Android.mk
+#endif
 
 RECOVERY_API_VERSION := 3
 RECOVERY_FSTAB_VERSION := 2
